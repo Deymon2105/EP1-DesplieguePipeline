@@ -2,6 +2,8 @@ name: Deploy Microservicio TCG a EC2
 
 on:
   push:
+    branches: [ main, develop ]
+  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -29,6 +31,7 @@ jobs:
           ./mvnw -B clean package -DskipTests
 
       - name: Copiar el jar a la instancia EC2
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -40,6 +43,7 @@ jobs:
           strip_components: 2
 
       - name: Reiniciar el servicio
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
