@@ -6,13 +6,6 @@ Evaluación Parcial N°1 Ingeniería DevOps: Pipeline de Despliegue
 
 Microservicio de catálogo de productos TCG (Trading Card Game) construido con Java 21 y Spring Boot, gestionado con Maven. El repositorio incluye un pipeline de CI/CD implementado con GitHub Actions que compila la aplicación y la despliega en una instancia EC2 de AWS.
 
-## Estructura del repositorio
-
-- `tcg/` — Microservicio Spring Boot (código fuente, pruebas y configuración).
-- `tcg/pom.xml` — Definición del proyecto y dependencias Maven.
-- `tcg/src/` — Código fuente: controladores, servicios, repositorios, DTOs y configuración.
-- `.github/workflows/deploy-tcg.yml` — Pipeline de CI/CD: build con Maven Wrapper y despliegue a EC2.
-
 ## Convenciones de ramas (naming)
 
 | Tipo de rama | Uso | Ejemplo real en el repositorio |
@@ -82,3 +75,9 @@ En el desarrollo de este proyecto se utilizó **Google Gemini** como apoyo:
 
 - **Comandos de terminal Ubuntu**: se consultaron los comandos necesarios para compilar con el Maven Wrapper, copiar artefactos a la instancia EC2 (`scp`/`ssh`) y gestionar el servicio (`systemctl`).
 - **Desarrollo del proyecto**: asistencia para resolver dudas durante la creación y configuración del microservicio y el pipeline de despliegue.
+- **Documentacion del proyecto**: asistencia para mejorar la redacción de la documentación del proyecto.
+
+## Reflexiones personales sobre el proyecto
+
+- Deymon González: este proyecto me ayudó a entender las diferencias y ventajas que hay entre hacer el despliegue de cambios de un backend de forma totalmente manual y hacerlo de manera automatizada utilizando un pipeline con GitHub Actions. Ya que de esta ultima forma resulta mucho más fácil y útil, por lo cual nos prepara también para agregarlo en nuestros otros proyectos.
+- Fernando Camus: Personalmente gracias a los repasos y al haber dado ya una asignatura similiar, pude profundizar y realmente probar que sabia utilizar AWS, además de realizar de manera correcta el CI/CD y comprender bien como utilizar las ramas y los pull requests.
